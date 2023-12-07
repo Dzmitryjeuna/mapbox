@@ -16,10 +16,11 @@
   --dark: #1d1d1d;
   --primary: #007afb;
   --bebas: "BebasNeue", sans-serif;
-  --border: 2pxsolid#272727
+  --border: 2px solid #272727
 }
 
 body {
+  font: 400 normal 20px/1 Arial, sans-serif;
   color: var(--wh);
   background-color: var(--dark)
 }
@@ -53,58 +54,31 @@ body {
   align-items: flex-start
 }
 
-.subtitle,
 .title {
   font-family: var(--bebas);
+  font-size: 163px;
+  font-size: clamp(65px, 9vw, 163px);
+  font-style: normal;
   font-weight: 700;
   line-height: .85;
-  text-transform: uppercase;
-  font-style: normal
-}
-
-.caption,
-.subtitle,
-.title {
-  font-style: normal
-}
-
-.color-primary,
-.nav__item-btn:hover {
-  color: var(--primary)
-}
-
-.about,
-.api,
-.edge,
-.hero {
-  overflow: hidden
-}
-
-.api,
-.footer,
-.solution {
-  background-repeat: no-repeat
-}
-
-.title {
-  font-size: 163px;
-  font-size: clamp(65px, 9vw, 163px)
+  text-transform: uppercase
 }
 
 .subtitle {
+  font-family: var(--bebas);
   font-size: 123px;
-  font-size: clamp(47px, 8vw, 123px)
-}
-
-.link-btn,
-.nav__list-link {
-  text-transform: capitalize
+  font-size: clamp(47px, 8vw, 123px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: .85;
+  text-transform: uppercase
 }
 
 .caption {
   font-family: Arial, sans-serif;
   font-size: 40px;
   font-size: clamp(26px, 3vw, 40px);
+  font-style: normal;
   font-weight: 400;
   line-height: .87;
   letter-spacing: -1.4px
@@ -117,7 +91,13 @@ body {
   min-width: 160px;
   padding: 12px 27px;
   border-radius: 64px;
-  text-align: center
+  text-transform: capitalize;
+  text-align: center;
+  transition: all.3sease-in-out
+}
+
+.color-primary {
+  color: var(--primary)
 }
 
 .color-wh {
@@ -136,18 +116,18 @@ body {
   background-color: var(--wh)
 }
 
-.bg-bl,
-.header {
+.bg-bl {
   background-color: var(--bl)
 }
 
 .nav__item-btn {
-  border: none
+  border: 2pxsolidvar (--primary)
 }
 
 .nav__item-btn:hover {
+  color: var(--primary);
   background: var(--wh);
-  border: none
+  border: 2pxsolidvar (--wh)
 }
 
 .header {
@@ -156,7 +136,8 @@ body {
   z-index: 10;
   min-height: 66px;
   padding-top: 10px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  background-color: var(--bl)
 }
 
 .nav-btn {
@@ -184,7 +165,8 @@ body {
 }
 
 .nav__list-link {
-  position: relative
+  position: relative;
+  text-transform: capitalize
 }
 
 .nav__list-link--active::after,
@@ -200,17 +182,17 @@ body {
 
 .hero {
   position: sticky;
-  top: -65%
+  top: -65%;
+  overflow: hidden
 }
 
 .promo {
   padding-top: 50px;
   padding-bottom: 90px;
-  border-radius: 0px0px30px30px;
+  border-radius: 0px 0px 30px 30px;
   background-color: var(--bl)
 }
 
-.company__inner,
 .promo__inner {
   position: relative;
   z-index: 5
@@ -251,6 +233,11 @@ body {
   margin-top: 105px
 }
 
+.company__inner {
+  position: relative;
+  z-index: 5
+}
+
 .company__inner::before {
   content: "";
   position: absolute;
@@ -281,7 +268,7 @@ body {
   z-index: 5
 }
 
-.company__textspan {
+.company__text span {
   color: var(--primary)
 }
 
@@ -289,9 +276,7 @@ body {
   width: 100%;
   height: auto;
   padding: clamp(40px, 5.5vw, 80px) 0;
-  border-top: var(--border);
-  scrollbar-color: var(--light-opacity) var(--dark);
-  scrollbar-width: thin
+  border-top: var(--border)
 }
 
 .company__items::-webkit-scrollbar {
@@ -306,12 +291,16 @@ body {
   background-color: var(--light-opacity)
 }
 
+.company__items {
+  scrollbar-color: var(--light-opacity) var(--dark);
+  scrollbar-width: thin
+}
+
 .company__items-box {
   gap: 0
 }
 
-.company__item,
-.footer__inner {
+.company__item {
   position: relative
 }
 
@@ -333,13 +322,8 @@ body {
   background: var(--bl-opacity-04);
   top: calc(50% - 24%);
   width: 1px;
+  height: 36px;
   height: 48%
-}
-
-.api,
-.products__item:nth-child(4),
-.solution {
-  background-size: cover
 }
 
 .api,
@@ -347,18 +331,14 @@ body {
 .edge,
 .footer {
   padding-top: clamp(40px, 6.5vw, 80px);
-  border-radius: 30px30px0px0px
+  border-radius: 30px 30px 0px 0px
 }
 
 .edge {
   position: sticky;
   top: -40%;
+  overflow: hidden;
   background-color: var(--light)
-}
-
-.products,
-.solution {
-  background-color: var(--dark)
 }
 
 .edge__items {
@@ -377,7 +357,7 @@ body {
   color: var(--bl-opacity-04)
 }
 
-.edge__item:first-child {
+.edge__item:nth-child(1) {
   top: -67px;
   right: clamp(0, 22.7vw, 437px)
 }
@@ -387,14 +367,10 @@ body {
   color: var(--light-opacity-04)
 }
 
-.edge__item:nth-child(3),
-.products__item.bg-primary.products__item-text {
-  color: var(--primary-opacity-04)
-}
-
 .edge__item:nth-child(3) {
   top: 432px;
-  right: clamp(0, 30.3vw, 581px)
+  right: clamp(0, 30.3vw, 581px);
+  color: var(--primary-opacity-04)
 }
 
 .edge__item:nth-child(4) {
@@ -420,13 +396,15 @@ body {
 
 .about {
   position: sticky;
-  top: -110%
+  top: -110%;
+  overflow: hidden
 }
 
 .products {
   height: 605px;
   padding-top: clamp(70px, 9vw, 110px);
-  border-radius: 30px30px0px0px
+  border-radius: 30px 30px 0px 0px;
+  background-color: var(--dark)
 }
 
 .products__subtitle {
@@ -446,18 +424,21 @@ body {
   max-width: 552px;
   max-width: clamp(310px, 33vw, 552px);
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   display: grid;
   align-content: space-between;
   padding: 30px;
   border-radius: 51px
 }
 
+.products__item.bg-primary.products__item-text {
+  color: var(--primary-opacity-04)
+}
+
 .products__item.bg-bl.products__item-text {
   color: var(--bl-opacity-04)
 }
 
-.footer__copyright,
 .products__item.bg-wh.products__item-text {
   color: var(--light-opacity-04)
 }
@@ -468,7 +449,8 @@ body {
 }
 
 .products__item:nth-child(4) {
-  background-image: url(../img/products-2.jpg)
+  background-image: url(../img/products-2.jpg);
+  background-size: cover
 }
 
 .products__item-text+.products__item-text {
@@ -478,12 +460,10 @@ body {
 .solution {
   position: relative;
   height: 140vh;
-  background-image: url(../img/solution-bg.jpg)
-}
-
-.api__btn,
-.solution__box {
-  background-color: var(--bl)
+  background-image: url(../img/solution-bg.jpg);
+  background-color: var(--dark);
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
 .solution__inner {
@@ -495,7 +475,8 @@ body {
 .solution__box {
   max-width: 1166px;
   height: 654px;
-  border-radius: 30px 30px 0px 0px
+  border-radius: 30px 30px 0px 0px;
+  background-color: var(--bl)
 }
 
 .form__solution-box {
@@ -509,14 +490,13 @@ body {
   width: 100%;
   height: 516px;
   padding-right: 30px;
-  border-right: none
+  border-right: 1px solid var(--light)
 }
 
 .form__solution-text {
   max-width: 347px
 }
 
-.contact__title,
 .form__solution-subtitle {
   margin-bottom: 30px
 }
@@ -537,7 +517,8 @@ body {
   padding: 15px30px;
   border-radius: 100px;
   cursor: pointer;
-  border: none
+  transition: all.3s;
+  border: 1pxsolidvar (--light)
 }
 
 .form__solution-checkbox-contact,
@@ -546,7 +527,7 @@ body {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip: rect(0000);
   padding-left: 45px
 }
 
@@ -579,7 +560,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 45px;
-  padding: 15px 25px;
+  padding: 15px25px;
   width: 150px;
   border-radius: 64px;
   cursor: pointer
@@ -592,15 +573,15 @@ body {
 .swiper-solution-button-left {
   margin-top: 20px;
   color: var(--bl-opacity-04);
-  border: none
+  border: 1pxsolidvar (--bl-opacity-04)
 }
 
-.swiper-solution-button-rightsvg {
+.swiper-solution-button-right svg {
   fill: var(--wh);
   width: 29px
 }
 
-.swiper-solution-button-leftsvg {
+.swiper-solution-button-left svg {
   fill: var(--bl-opacity-04);
   rotate: 180deg
 }
@@ -615,7 +596,7 @@ body {
 .form__solution-input-contact {
   box-sizing: border-box;
   padding: 15px 30px;
-  border: none;
+  border: 1pxsolidvar (--bl-opacity-04);
   border-radius: 100px;
   margin-bottom: 15px
 }
@@ -637,7 +618,7 @@ body {
 .form__solution-checkbox-contact-style {
   width: 20px;
   height: 20px;
-  border: none;
+  border: 1px solid var(--bl-opacity-04);
   border-radius: 8px;
   position: absolute;
   margin-left: -35px
@@ -658,8 +639,11 @@ body {
 .api {
   position: sticky;
   top: 5%;
+  overflow: hidden;
   height: 95.8vh;
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 95%, #1d1d1d 84%), url(../img/api-bg.jpg);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 97%, rgba(29, 29, 29, 1) 84%), url(../img/api-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 1
 }
 
@@ -675,24 +659,21 @@ body {
   z-index: -1
 }
 
-.contact,
-.footer {
-  position: sticky;
-  overflow: hidden
-}
-
 .api__btn {
-  border: none
+  border: 2px solid var(--bl);
+  background-color: var(--bl)
 }
 
 .api__btn:hover {
   color: var(--wh);
   background: var(--primary);
-  border: none
+  border: 2pxsolidvar (--primary)
 }
 
 .contact {
+  position: sticky;
   top: 80%;
+  overflow: hidden;
   z-index: 3;
   padding-bottom: clamp(40px, 6.5vw, 80px);
   background-color: var(--dark)
@@ -704,6 +685,10 @@ body {
   margin: 0 auto
 }
 
+.contact__title {
+  margin-bottom: 30px
+}
+
 .contact__text {
   max-width: 586px;
   margin: 0 auto;
@@ -712,8 +697,8 @@ body {
 
 .contact__form {
   max-width: 406px;
-  margin: 0 auto;
-  border: none;
+  margin: 0auto;
+  border: 1px solid var(--bl-opacity-04);
   border-radius: 28px;
   height: 54px
 }
@@ -728,7 +713,12 @@ body {
 }
 
 .contact__input {
-  padding: 17px 0 17px 30px
+  padding: 17px017px30px
+}
+
+.contact__input::placeholder,
+.form__solution-input-contact::placeholder {
+  font: 400normal20px/1Arial, sans-serif
 }
 
 .contact__button {
@@ -737,8 +727,9 @@ body {
   margin-right: 5px
 }
 
-.contact__buttonsvg {
-  fill: var(--light)
+.contact__button svg {
+  fill: var(--light);
+  transition: all .5s
 }
 
 .contact__button:active svg,
@@ -748,14 +739,21 @@ body {
 }
 
 .footer {
+  position: sticky;
   top: 0;
+  overflow: hidden;
   background-image: url(../img/footer-bg.svg);
   background-position: bottom;
+  background-repeat: no-repeat;
   background-size: contain;
   background-color: var(--bl)
 }
 
-.footer__item:first-child {
+.footer__inner {
+  position: relative
+}
+
+.footer__item:nth-child(1) {
   min-width: 241px
 }
 
@@ -794,12 +792,17 @@ body {
   gap: 12px
 }
 
-.footer__social svg {
-  fill: var(--wh)
+.footer__socialsvg {
+  fill: var(--wh);
+  transition: fill.5s
 }
 
-.footer__social:hover svg {
+.footer__social:hoversvg {
   fill: var(--primary)
+}
+
+.footer__copyright {
+  color: var(--light-opacity-04)
 }
 
 @media (max-width:1475px) {
@@ -821,7 +824,7 @@ body {
     top: -85%
   }
 
-  .edge__item:first-child {
+  .edge__item:nth-child(1) {
     top: -35px
   }
 
@@ -878,7 +881,7 @@ body {
     width: 1250px
   }
 
-  .edge__item:first-child {
+  .edge__item:nth-child(1) {
     top: 10px
   }
 
@@ -959,11 +962,11 @@ body {
     gap: 25px;
     background-color: var(--bl);
     color: var(--primary);
-    transition: transform1s
+    transition: transform 1s
   }
 
   .header__nav-list--two {
-    top: calc(134px +66px - 5px)
+    top: calc(134px+66px-5px)
   }
 
   .header__nav-list.header__nav-list--active {
@@ -1087,7 +1090,7 @@ body {
     margin-bottom: 30px
   }
 
-  .edge__item:first-child,
+  .edge__item:nth-child(1),
   .edge__item:nth-child(3) {
     right: 153px
   }
@@ -1114,26 +1117,22 @@ body {
 }
 
 @media (max-width:700px) {
-
-  .form__solution-btn,
-  .promo__items,
-  .swiper-solution-button-left,
-  .swiper-solution-button-right {
-    margin-top: 30px
-  }
-
   .promo__img {
     display: none
   }
 
   .promo__items {
-    margin-left: 0;
-    width: 100%
+    margin-top: 30px;
+    margin-left: 0
   }
 
   .promo {
     padding-top: 20px;
     padding-bottom: 40px
+  }
+
+  .promo__items {
+    width: 100%
   }
 
   .edge__item {
@@ -1163,11 +1162,17 @@ body {
   .form__solution-right {
     width: 100%;
     padding-top: 30px;
-    border-top: none
+    border-top: 1px solid var(--light)
   }
 
   .form__solution-text {
     max-width: 100%
+  }
+
+  .form__solution-btn,
+  .swiper-solution-button-left,
+  .swiper-solution-button-right {
+    margin-top: 30px
   }
 
   .form__solution-button {
@@ -1188,7 +1193,7 @@ body {
     min-width: 131px
   }
 
-  .footer__social svg {
+  .footer__socialsvg {
     height: 45px;
     width: 45px
   }
@@ -1201,7 +1206,7 @@ body {
 
   .link-btn {
     font-size: 16px;
-    padding: 12px19px
+    padding: 12px 19px
   }
 
   .company__items-box {
@@ -1281,7 +1286,7 @@ body {
     font-size: 54px
   }
 
-  .footer__item:first-child,
+  .footer__item:nth-child(1),
   .footer__item:nth-child(5) {
     min-width: 195px
   }
