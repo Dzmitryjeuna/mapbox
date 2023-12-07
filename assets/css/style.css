@@ -1,21 +1,22 @@
 @font-face {
-  font-family: BebasNeue;
-  src: url(../fonts/bebasneuebold.woff2) format("woff2"), url(../fonts/bebasneuebold.woff) format("woff");
+  font-family: 'Bebas Neue';
+  src: url('../fonts/bebasneuebold.woff2') format('woff2'),
+    url('../fonts/bebasneuebold.woff') format('woff');
   font-weight: 700;
   font-style: normal
 }
 
 :root {
-  --wh: #ffffff;
+  --wh: #FFFFFF;
   --bl: #111111;
-  --light: #ededed;
+  --light: #EDEDED;
   --light-opacity: #272727;
   --light-opacity-04: #707070;
-  --bl-opacity-04: #a0a0a0;
-  --primary-opacity-04: #66affd;
-  --dark: #1d1d1d;
-  --primary: #007afb;
-  --bebas: "BebasNeue", sans-serif;
+  --bl-opacity-04: #A0A0A0;
+  --primary-opacity-04: #66AFFD;
+  --dark: #1D1D1D;
+  --primary: #007AFB;
+  --bebas: 'Bebas Neue', sans-serif;
   --border: 2px solid #272727
 }
 
@@ -28,7 +29,7 @@ body {
 .container {
   max-width: 1880px;
   margin: 0 auto;
-  padding: 10px
+  padding: 0 10px
 }
 
 .flex {
@@ -93,7 +94,7 @@ body {
   border-radius: 64px;
   text-transform: capitalize;
   text-align: center;
-  transition: all.3sease-in-out
+  transition: all .3s ease-in-out
 }
 
 .color-primary {
@@ -121,13 +122,13 @@ body {
 }
 
 .nav__item-btn {
-  border: 2pxsolidvar (--primary)
+  border: 2px solid var(--primary);
 }
 
 .nav__item-btn:hover {
   color: var(--primary);
   background: var(--wh);
-  border: 2pxsolidvar (--wh)
+  border: 2px solid var(--wh)
 }
 
 .header {
@@ -276,11 +277,14 @@ body {
   width: 100%;
   height: auto;
   padding: clamp(40px, 5.5vw, 80px) 0;
-  border-top: var(--border)
+  border-top: var(--border);
+  /* -ms-overflow-style: none; */
+  /* scrollbar-width: none; */
 }
 
 .company__items::-webkit-scrollbar {
-  height: 13px
+  /* display: none; */
+  height: 13px;
 }
 
 .company__items::-webkit-scrollbar-track {
@@ -312,12 +316,12 @@ body {
   padding-right: clamp(20px, 2.6vw, 50px)
 }
 
-.company__item:last-child.company__item-img {
+.company__item:last-child .company__item-img {
   padding-right: 0
 }
 
 .company__item:not(:last-child)::after {
-  content: "";
+  content: '';
   position: absolute;
   background: var(--bl-opacity-04);
   top: calc(50% - 24%);
@@ -326,9 +330,9 @@ body {
   height: 48%
 }
 
+.edge,
 .api,
 .contact,
-.edge,
 .footer {
   padding-top: clamp(40px, 6.5vw, 80px);
   border-radius: 30px 30px 0px 0px
@@ -413,7 +417,7 @@ body {
 
 .products__items {
   position: relative;
-  gap: 0
+  gap: 0px
 }
 
 .products__items.swiper-wrapper {
@@ -424,22 +428,22 @@ body {
   max-width: 552px;
   max-width: clamp(310px, 33vw, 552px);
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
   display: grid;
   align-content: space-between;
   padding: 30px;
-  border-radius: 51px
+  border-radius: 51px / 51px
 }
 
-.products__item.bg-primary.products__item-text {
+.products__item.bg-primary .products__item-text {
   color: var(--primary-opacity-04)
 }
 
-.products__item.bg-bl.products__item-text {
+.products__item.bg-bl .products__item-text {
   color: var(--bl-opacity-04)
 }
 
-.products__item.bg-wh.products__item-text {
+.products__item.bg-wh .products__item-text {
   color: var(--light-opacity-04)
 }
 
@@ -481,7 +485,7 @@ body {
 
 .form__solution-box {
   padding-top: 125px;
-  margin: 30px;
+  margin: 0 30px;
   gap: 30px
 }
 
@@ -514,24 +518,24 @@ body {
 
 .form__solution-label {
   display: inline-block;
-  padding: 15px30px;
+  padding: 15px 30px;
   border-radius: 100px;
   cursor: pointer;
-  transition: all.3s;
-  border: 1pxsolidvar (--light)
+  transition: all .3s;
+  border: 1px solid var(--light)
 }
 
-.form__solution-checkbox-contact,
-.form__solution-listinput[type=radio] {
+.form__solution-list input[type=radio],
+.form__solution-checkbox-contact {
   position: absolute;
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip: rect(0000);
-  padding-left: 45px
+  clip: rect(0 0 0 0);
+  padding-left: 45px;
 }
 
-.form__solution-listinput[type=radio]:checked+.form__solution-label {
+.form__solution-list input[type=radio]:checked+.form__solution-label {
   border-color: var(--dark)
 }
 
@@ -539,14 +543,14 @@ body {
   opacity: 0
 }
 
-.swiper-solution-button-left,
-.swiper-solution-button-right {
+.swiper-solution-button-right,
+.swiper-solution-button-left {
   gap: 14px
 }
 
-.form__solution-btn,
+.swiper-solution-button-right,
 .swiper-solution-button-left,
-.swiper-solution-button-right {
+.form__solution-btn {
   box-sizing: border-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -560,7 +564,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   margin-top: 45px;
-  padding: 15px25px;
+  padding: 15px 25px;
   width: 150px;
   border-radius: 64px;
   cursor: pointer
@@ -573,7 +577,7 @@ body {
 .swiper-solution-button-left {
   margin-top: 20px;
   color: var(--bl-opacity-04);
-  border: 1pxsolidvar (--bl-opacity-04)
+  border: 1px solid var(--bl-opacity-04)
 }
 
 .swiper-solution-button-right svg {
@@ -596,7 +600,7 @@ body {
 .form__solution-input-contact {
   box-sizing: border-box;
   padding: 15px 30px;
-  border: 1pxsolidvar (--bl-opacity-04);
+  border: 1px solid var(--bl-opacity-04);
   border-radius: 100px;
   margin-bottom: 15px
 }
@@ -625,7 +629,7 @@ body {
 }
 
 .form__solution-checkbox-contact:checked+.form__solution-checkbox-contact-style::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 18px;
   height: 18px;
@@ -667,7 +671,7 @@ body {
 .api__btn:hover {
   color: var(--wh);
   background: var(--primary);
-  border: 2pxsolidvar (--primary)
+  border: 2px solid var(--primary)
 }
 
 .contact {
@@ -697,7 +701,7 @@ body {
 
 .contact__form {
   max-width: 406px;
-  margin: 0auto;
+  margin: 0 auto;
   border: 1px solid var(--bl-opacity-04);
   border-radius: 28px;
   height: 54px
@@ -706,19 +710,19 @@ body {
 .contact__input,
 .form__solution-input-contact {
   width: 100%;
-  outline: 0;
+  outline: none;
   font: inherit;
   color: var(--primary);
   caret-color: var(--primary)
 }
 
 .contact__input {
-  padding: 17px017px30px
+  padding: 17px 0 17px 30px
 }
 
 .contact__input::placeholder,
 .form__solution-input-contact::placeholder {
-  font: 400normal20px/1Arial, sans-serif
+  font: 400 normal 20px/1 Arial, sans-serif
 }
 
 .contact__button {
@@ -732,8 +736,8 @@ body {
   transition: all .5s
 }
 
-.contact__button:active svg,
-.contact__button:hover svg {
+.contact__button:hover svg,
+.contact__button:active svg {
   fill: var(--primary);
   transform: rotate(-50deg)
 }
@@ -785,19 +789,19 @@ body {
 .footer__list {
   position: absolute;
   bottom: 0;
-  gap: 170px
+  gap: 0 170px
 }
 
 .footer__socials {
-  gap: 12px
+  gap: 0 12px
 }
 
-.footer__socialsvg {
+.footer__social svg {
   fill: var(--wh);
-  transition: fill.5s
+  transition: fill .5s
 }
 
-.footer__social:hoversvg {
+.footer__social:hover svg {
   fill: var(--primary)
 }
 
@@ -842,7 +846,7 @@ body {
   }
 
   .footer__list {
-    gap: 100px
+    gap: 0 100px
   }
 }
 
@@ -852,7 +856,7 @@ body {
   }
 
   .link-btn {
-    padding: 12px19px
+    padding: 12px 19px
   }
 
   .promo__items {
@@ -966,7 +970,7 @@ body {
   }
 
   .header__nav-list--two {
-    top: calc(134px+66px-5px)
+    top: calc(134px + 66px - 5px)
   }
 
   .header__nav-list.header__nav-list--active {
@@ -1026,7 +1030,7 @@ body {
 
   .form__solution-box {
     padding-top: 100px;
-    margin: 15px
+    margin: 0 15px
   }
 
   .form__solution-label {
@@ -1169,9 +1173,9 @@ body {
     max-width: 100%
   }
 
-  .form__solution-btn,
+  .swiper-solution-button-right,
   .swiper-solution-button-left,
-  .swiper-solution-button-right {
+  .form__solution-btn {
     margin-top: 30px
   }
 
@@ -1193,7 +1197,7 @@ body {
     min-width: 131px
   }
 
-  .footer__socialsvg {
+  .footer__social svg {
     height: 45px;
     width: 45px
   }
@@ -1246,7 +1250,7 @@ body {
 
 @media (max-width:451px) {
   .link-btn {
-    padding: 10px13px
+    padding: 10px 13px
   }
 
   .logo__img-m {
