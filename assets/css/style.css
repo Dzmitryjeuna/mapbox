@@ -264,7 +264,7 @@ body {
   position: absolute;
   text-align: center;
   right: 628px;
-  right: clamp(0, 37vw, 628px);
+  right: clamp(0px, 37vw, 628px);
   z-index: 5
 }
 
@@ -359,7 +359,7 @@ body {
 
 .edge__item:nth-child(1) {
   top: -67px;
-  right: clamp(0, 22.7vw, 437px)
+  right: clamp(0px, 22.7vw, 437px)
 }
 
 .edge__item:nth-child(2) {
@@ -369,13 +369,13 @@ body {
 
 .edge__item:nth-child(3) {
   top: 432px;
-  right: clamp(0, 30.3vw, 581px);
+  right: clamp(0px, 30.3vw, 581px);
   color: var(--primary-opacity-04)
 }
 
 .edge__item:nth-child(4) {
   top: 659px;
-  right: clamp(0, 15.1vw, 290px)
+  right: clamp(0px, 15.1vw, 290px)
 }
 
 .edge__item-caption {
@@ -870,7 +870,7 @@ body {
   }
 
   .company__text {
-    right: clamp(0, 32vw, 628px)
+    right: clamp(0px, 32vw, 628px)
   }
 
   .edge__items {
