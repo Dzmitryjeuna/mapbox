@@ -848,6 +848,9 @@ body {
   .footer__list {
     gap: 0 100px
   }
+
+  .footer__item:nth-child(4) {
+    max-width: 30%;
 }
 
 @media (max-width:1180px) {
