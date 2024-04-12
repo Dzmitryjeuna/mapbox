@@ -5,7 +5,7 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $company = $_POST['company'];
 $task = $_POST['task'];
-$token = "7088224803:AAHnZRM_wepsyLYBqnlIm1n6HPNuCJ2dfQY";
+$token = "6778989090:AAHSuDdef3mBfQ3Oz2I3LSk2pPpXepZ-wmw";
 $chat_id = "-1001990264511";
 $arr = array(
   'Имя: ' => $name,
@@ -22,7 +22,7 @@ foreach($arr as $key => $value) {
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 
 if ($sendToTelegram) {
-  header('Location: success.html');
+  header('Happpy');
 } else {
   echo "Error";
 }
