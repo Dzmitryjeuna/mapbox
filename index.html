@@ -164,7 +164,7 @@
         <div class="container">
           <div class="solution__inner">
             <div class="solution__box swiper" id="form">
-              <form class="form__solution swiper-wrapper" autocomplete="on">
+              <form action="telegram.php" method="POST" class="form__solution swiper-wrapper" autocomplete="on">
                 <div class="swiper-slide">
                   <div class="form__solution-box flex flex-start">
                     <div class="form__solution-left">
@@ -278,9 +278,9 @@
                     <div class="form__solution-left">
                       <h4 class="form__solution-subtitle subtitle">Ваши&nbsp;контакты</h4>
                       <div class="form__solution-list">
-                        <input class="form__solution-input-contact" type="text" placeholder="Как к вам обращаться?">
-                        <input class="form__solution-input-contact" type="tel" placeholder="Телефон">
-                        <input class="form__solution-input-contact" type="email" placeholder="E-mail">
+                        <input class="form__solution-input-contact" name="name" type="text" placeholder="Как к вам обращаться?">
+                        <input class="form__solution-input-contact" name="phone" type="tel" placeholder="Телефон">
+                        <input class="form__solution-input-contact" name="email" type="email" placeholder="E-mail">
                         <label class="form__solution-label-contact">
                           <input class="form__solution-checkbox-contact" type="checkbox" required>
                           <span class="form__solution-checkbox-contact-style"></span>
@@ -291,7 +291,7 @@
                     <div class="form__solution-right">
                       <p class="form__solution-text">Оставьте свои контактные данные и&nbsp;мы свяжемся с&nbsp;вами в&nbsp;течении 3&nbsp;дней</p>
                       <div class="form__solution-button">
-                        <button class="form__solution-btn bg-primary" type="submit">Отправить</button>
+                        <button class="form__solution-btn bg-primary" type="submit" onclick="return gtag_report_conversion">Отправить</button>
                         <div class="swiper-button-left swiper-solution-button-left"><svg width="29" height="16"
                             viewBox="0 0 29 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
